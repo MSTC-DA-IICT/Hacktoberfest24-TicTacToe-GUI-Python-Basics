@@ -248,6 +248,33 @@
      <string>New Game</string>
     </property>
    </widget>
+   <!-- New Buttons for Color Selection -->
+   <widget class="QPushButton" name="player1_color_button">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>620</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Player 1 Color</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="player2_color_button">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>620</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Player 2 Color</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

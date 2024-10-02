@@ -50,7 +50,7 @@ class UI(QMainWindow):
         self.label.setText("Player 1 (X) turn")
 
         self.show()
-        self.newGameButton.hide()  # Initially hide the new game button
+        self.newGameButton.hide() # Initially hide the new game button
 
     def SelectPlayer1Color(self):
         color = QColorDialog.getColor() #opens dialogue box
@@ -64,6 +64,7 @@ class UI(QMainWindow):
             self.player2_color = color
             self.player2_color_button.setStyleSheet(f"background-color: {self.player2_color.name()};")
 
+    # New Game clears the whole Board
     def NewGame(self):
         button_list = [
             self.pushButton_1, self.pushButton_2, self.pushButton_3,
@@ -79,9 +80,11 @@ class UI(QMainWindow):
         self.label.setText("Player 1 (X) turn")
         self.player_turn = True  # Reset to Player 1's turn
 
+    # Check button checks is X's is winning or O's is winning
     def Check(self):
         pass
 
+    # Reaction when you push buttons
     def PushingButton(self, btn):
         if btn.text() == "":
             # Player 1's turn (X)
@@ -105,5 +108,7 @@ class UI(QMainWindow):
 
 
 app = QApplication(sys.argv)
+
 UIWindow = UI()
+
 app.exec_()

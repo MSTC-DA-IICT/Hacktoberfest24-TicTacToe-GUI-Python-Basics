@@ -53,13 +53,13 @@ class UI(QMainWindow):
         self.newGameButton.hide()  # Initially hide the new game button
 
     def SelectPlayer1Color(self):
-        color = QColorDialog.getColor()
+        color = QColorDialog.getColor() #opens dialogue box
         if color.isValid():
             self.player1_color = color
             self.player1_color_button.setStyleSheet(f"background-color: {self.player1_color.name()};")
 
     def SelectPlayer2Color(self):
-        color = QColorDialog.getColor()
+        color = QColorDialog.getColor() #opens dialogue box
         if color.isValid():
             self.player2_color = color
             self.player2_color_button.setStyleSheet(f"background-color: {self.player2_color.name()};")

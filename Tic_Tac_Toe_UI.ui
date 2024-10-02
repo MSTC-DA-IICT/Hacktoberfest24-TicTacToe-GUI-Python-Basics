@@ -248,7 +248,7 @@
      <string>New Game</string>
     </property>
    </widget>
-   <!-- New Buttons for Color Selection -->
+   <!-- New Buttons for Color Selection for both players-->
    <widget class="QPushButton" name="player1_color_button">
     <property name="geometry">
      <rect>

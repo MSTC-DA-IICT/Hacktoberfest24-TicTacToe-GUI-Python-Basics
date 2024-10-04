@@ -248,6 +248,67 @@
      <string>New Game</string>
     </property>
    </widget>
+<!-- QComboBox for selecting game mode -->
+   <widget class="QComboBox" name="modeSelectComboBox">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>610</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Play against Player</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Play against Bot</string>
+     </property>
+    </item>
+   </widget>
+
+   <!-- QComboBox for selecting difficulty level -->
+   <widget class="QComboBox" name="difficultyComboBox">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>650</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Easy</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Medium</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hard</string>
+     </property>
+    </item>
+   </widget>
+
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

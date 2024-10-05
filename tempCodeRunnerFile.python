@@ -1,0 +1,25 @@
+from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow
+
+class UI(QMainWindow):
+    def __init__(self):
+        super(UI, self).__init__()
+        uic.loadUi('Tic_Tac_Toe_UI.ui', self)  # Load the UI file
+        
+        # Find the QComboBox in the loaded UI
+        self.modeComboBox = self.findChild(QComboBox, 'modeComboBox')
+
+        if self.modeComboBox:
+            self.modeComboBox.currentTextChanged.connect(self.changeGameMode)
+        else:
+            print("Error: modeComboBox not found!")
+
+    def changeGameMode(self, mode):
+        # Implement the function to handle mode changes
+        print(f"Selected mode: {mode}")
+
+if __name__ == "__main__":
+    app = QApplication([])
+    UIWindow = UI()
+    UIWindow.show()
+    app.exec_()

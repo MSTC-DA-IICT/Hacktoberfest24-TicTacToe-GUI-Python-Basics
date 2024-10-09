@@ -1,7 +1,8 @@
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QGridLayout, 
                              QPushButton, QLabel, QVBoxLayout, QHBoxLayout, 
-                             QLineEdit, QMessageBox, QTableWidget, QTableWidgetItem)
+                             QLineEdit, QMessageBox, QTableWidget, QTableWidgetItem,
+                             QScrollArea)
 from PyQt5.QtCore import Qt
 
 class TicTacToeButton(QPushButton):
@@ -110,7 +111,17 @@ class TournamentManager(QMainWindow):
 
         self.player_inputs = []
         self.player_input_layout = QVBoxLayout()  # Separate layout for player inputs
-        player_layout.addLayout(self.player_input_layout, 1, 0, 1, 2)
+        
+        # Scroll area for player inputs
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setFixedHeight(300)  # Set a fixed height for the scroll area
+        
+        player_input_widget = QWidget()  # Widget to hold the player input layout
+        player_input_widget.setLayout(self.player_input_layout)  # Set the layout to the widget
+        self.scroll_area.setWidget(player_input_widget)  # Add the input widget to the scroll area
+        
+        player_layout.addWidget(self.scroll_area, 1, 0, 1, 2)
 
         start_button = QPushButton("Start Tournament")
         start_button.clicked.connect(self.start_tournament)
@@ -245,7 +256,6 @@ class TournamentManager(QMainWindow):
         for i, (player, points) in enumerate(self.points_table.items()):
             self.points_table_widget.setItem(i, 0, QTableWidgetItem(player))
             self.points_table_widget.setItem(i, 1, QTableWidgetItem(str(points)))
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
